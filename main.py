@@ -36,3 +36,16 @@ print(is_palindrome("Adivina ya te opina, ya ni miles origina, ya ni cetro me do
 print(is_palindrome("¿Qué tal todo?")) # False
 print(is_palindrome("I did, did I?")) # True
 print(is_palindrome("solod")) # False
+print("---------------------------")
+
+# Alternative using 'reversed' and 'join' functions
+def alt_is_palindrome(text):
+    formatted_text = re.sub("[^\w]", "", text).lower()
+    normalized_text = normalize(formatted_text)
+    return normalized_text == ''.join(reversed(normalized_text))
+
+print(is_palindrome("Ana lleva al oso la avellana")) # True
+print(is_palindrome("Adivina ya te opina, ya ni miles origina, ya ni cetro me domina, ya ni monarcas, a repaso ni mulato carreta, acaso nicotina, ya ni cita vecino, anima cocina, pedazo gallina, cedazo terso nos retoza de canilla goza, de pánico camina, ónice vaticina, ya ni tocino saca, a terracota luminosa pera, sacra nómina y ánimo de mortecina, ya ni giros elimina, ya ni poeta, ya ni vida")) # True
+print(is_palindrome("¿Qué tal todo?")) # False
+print(is_palindrome("I did, did I?")) # True
+print(is_palindrome("solod")) # False
